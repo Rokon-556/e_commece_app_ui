@@ -4,6 +4,8 @@ import '../models/our_product_item.dart';
 import '../widgets/our_product_item_view.dart';
 
 class OurProductsPage extends StatelessWidget {
+    static const routeName = '/products-page';
+
   const OurProductsPage({super.key});
 
   @override

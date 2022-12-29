@@ -5,6 +5,8 @@ import 'package:ecommerce_pages/widgets/home_page_menu_item_view.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+    static const routeName = '/home-page';
+
   const HomePage({super.key});
 
   @override
@@ -35,8 +37,10 @@ class HomePage extends StatelessWidget {
             children: [
               InkWell(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Profile()));
+                                    Navigator.of(context).pushNamed(Profile.routeName);
+
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const Profile()));
                   },
                   child: const Text('Profile')),
               const Divider(),

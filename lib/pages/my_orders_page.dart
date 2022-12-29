@@ -8,6 +8,8 @@ import 'package:intl/intl.dart';
 import '../widgets/my_order_info.dart';
 
 class MyOrdersPage extends StatelessWidget {
+    static const routeName = '/orders-page';
+
   const MyOrdersPage({
     super.key,
   });

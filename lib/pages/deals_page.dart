@@ -3,6 +3,8 @@ import 'package:ecommerce_pages/widgets/offer_item.dart';
 import 'package:flutter/material.dart';
 
 class DealsPage extends StatelessWidget {
+    static const routeName = '/deals-page';
+
   const DealsPage({super.key});
 
   @override

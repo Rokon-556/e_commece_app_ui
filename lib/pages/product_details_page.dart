@@ -10,6 +10,8 @@ import '../widgets/dot_indicator.dart';
 import '../widgets/increase_button.dart';
 
 class ProductDetailsPage extends StatefulWidget {
+    static const routeName = '/details-page';
+
   const ProductDetailsPage(
       {super.key,
       required this.imgURL,

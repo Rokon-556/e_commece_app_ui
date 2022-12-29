@@ -7,6 +7,8 @@ import 'package:ecommerce_pages/widgets/total_amount.dart';
 import 'package:flutter/material.dart';
 
 class MyCartPage extends StatelessWidget {
+  static const routeName = '/cart-page';
+
   const MyCartPage({super.key});
 
   @override
@@ -64,13 +66,14 @@ class MyCartPage extends StatelessWidget {
               itemCount: item.length,
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ProductDetailsPage(
-                            imgURL: item[index].imgUrl,
-                            title: item[index].title,
-                            price: item[index].price.toString(),
-                            unit: item[index].quantity,
-                          )));
+                  Navigator.of(context).pushNamed(ProductDetailsPage.routeName);
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //     builder: (context) => ProductDetailsPage(
+                  //           imgURL: item[index].imgUrl,
+                  //           title: item[index].title,
+                  //           price: item[index].price.toString(),
+                  //           unit: item[index].quantity,
+                  //         )));
                 },
                 child: CartItems(
                   imgUrl: item[index].imgUrl,

@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../widgets/text_widget.dart';
 
 class ConfirmationPage extends StatelessWidget {
+  static const routeName = '/confirmation-page';
   const ConfirmationPage({super.key});
 
   @override
@@ -50,8 +51,9 @@ class ConfirmationPage extends StatelessWidget {
           ),
           CustomButton(
               function: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => const HomePage()));
+                Navigator.of(context).pushNamed(HomePage.routeName);
+                // Navigator.of(context).push(
+                //     MaterialPageRoute(builder: (context) => const HomePage()));
               },
               text: 'Continue Shopping',
               color: const Color(0xff014ea0),
@@ -63,8 +65,10 @@ class ConfirmationPage extends StatelessWidget {
           ),
           CustomButton(
               function: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const MyOrdersPage()));
+                                Navigator.of(context).pushNamed(MyOrdersPage.routeName);
+
+                // Navigator.of(context).push(MaterialPageRoute(
+                //     builder: (context) => const MyOrdersPage()));
               },
               text: 'View All Orders',
               color: const Color(0xff014ea0),
