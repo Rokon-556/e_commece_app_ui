@@ -10,7 +10,7 @@ import '../widgets/dot_indicator.dart';
 import '../widgets/increase_button.dart';
 
 class ProductDetailsPage extends StatefulWidget {
-    static const routeName = '/details-page';
+  static const routeName = '/details-page';
 
   const ProductDetailsPage(
       {super.key,
@@ -35,19 +35,19 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0);
-    // _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
-    //   if (_pageIndex < 2) {
-    //     _pageIndex++;
-    //   } else {
-    //     _pageIndex = 0;
-    //   }
+    _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
+      if (_pageIndex < 3) {
+        _pageIndex++;
+      } else {
+        _pageIndex = 0;
+      }
 
-    //   _pageController.animateToPage(
-    //     _pageIndex,
-    //     duration: const Duration(milliseconds: 350),
-    //     curve: Curves.easeIn,
-    //   );
-    // });
+      _pageController.animateToPage(
+        _pageIndex,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+    });
   }
 
   @override

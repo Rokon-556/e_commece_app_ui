@@ -39,6 +39,7 @@ class MyCartPage extends StatelessWidget {
     ];
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         elevation: 0,
@@ -63,6 +64,8 @@ class MyCartPage extends StatelessWidget {
         children: [
           Expanded(
             child: ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: item.length,
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
@@ -87,28 +90,26 @@ class MyCartPage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(20),
-            child: Container(
-              child: TextFormField(
-                controller: promoController,
-                cursorWidth: 2,
-                decoration: InputDecoration(
-                  hintText: 'Promo Code',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                    borderSide: BorderSide.none,
-                  ),
-                  suffixIcon: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: CustomButton(
-                        height: 10,
-                        function: () {},
-                        text: 'Apply',
-                        color: const Color(0xff014ea0),
-                        width: 70.0,
-                        fontSize: 14),
-                  ),
+            child: TextFormField(
+              controller: promoController,
+              cursorWidth: 2,
+              decoration: InputDecoration(
+                hintText: 'Promo Code',
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                  borderSide: BorderSide.none,
+                ),
+                suffixIcon: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CustomButton(
+                      height: 10,
+                      function: () {},
+                      text: 'Apply',
+                      color: const Color(0xff014ea0),
+                      width: 70.0,
+                      fontSize: 14),
                 ),
               ),
             ),
