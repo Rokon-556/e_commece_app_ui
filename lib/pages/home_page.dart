@@ -7,7 +7,6 @@ import 'package:ecommerce_pages/pages/our_products_page.dart';
 import 'package:ecommerce_pages/pages/profile_page.dart';
 import 'package:ecommerce_pages/widgets/home_page_menu_item_view.dart';
 import 'package:flutter/material.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home-page';
@@ -24,27 +23,27 @@ class _HomePageState extends State<HomePage> {
   bool isAlertSet = false;
 
   @override
-  void initState() {
-    super.initState();
-    getConnectivity();
-  }
+  // void initState() {
+  //   super.initState();
+  //   getConnectivity();
+  // }
 
-  getConnectivity() =>
-      subscription = Connectivity().onConnectivityChanged.listen((event) async {
-        isDeviceConnected = await InternetConnectionChecker().hasConnection;
-        if (!isDeviceConnected && isAlertSet == false) {
-          const NoInternetPage();
-          setState(() {
-            isAlertSet = true;
-          });
-        }
-      });
+  // getConnectivity() =>
+  //     subscription = Connectivity().onConnectivityChanged.listen((event) async {
+  //       isDeviceConnected = await InternetConnectionChecker().hasConnection;
+  //       if (!isDeviceConnected && isAlertSet == false) {
+  //         const NoInternetPage();
+  //         setState(() {
+  //           isAlertSet = true;
+  //         });
+  //       }
+  //     });
 
-  @override
-  void dispose() {
-    super.dispose();
-    subscription.cancel();
-  }
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  //   subscription.cancel();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +74,6 @@ class _HomePageState extends State<HomePage> {
               InkWell(
                   onTap: () {
                     Navigator.of(context).pushNamed(Profile.routeName);
-
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (context) => const Profile()));
                   },
                   child: const Text('Profile')),
               const Divider(),

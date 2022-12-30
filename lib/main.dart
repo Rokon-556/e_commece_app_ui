@@ -34,16 +34,13 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color(0xfff7e6e6),
       ),
-      // home: const HelpCenterPage(),
-      // home: const HomePage(),
-      home: NoInternetPage(),
+      home: const NoInternetPage(),
       routes: {
         ConfirmationPage.routeName: ((context) => const ConfirmationPage()),
         DealsPage.routeName: ((context) => const DealsPage()),
         MyCartPage.routeName: ((context) => const MyCartPage()),
         MyOrdersPage.routeName: ((context) => const MyOrdersPage()),
         OurProductsPage.routeName: ((context) => const OurProductsPage()),
-        // ProductDetailsPage.routeName:((context)=>ProductDetailsPage()),
         Profile.routeName: ((context) => const Profile()),
       },
     );
