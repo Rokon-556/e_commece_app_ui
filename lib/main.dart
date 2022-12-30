@@ -4,6 +4,7 @@ import 'package:ecommerce_pages/pages/help_center_page.dart';
 import 'package:ecommerce_pages/pages/home_page.dart';
 import 'package:ecommerce_pages/pages/my_cart_page.dart';
 import 'package:ecommerce_pages/pages/my_orders_page.dart';
+import 'package:ecommerce_pages/pages/no_internet_page.dart';
 import 'package:ecommerce_pages/pages/our_products_page.dart';
 import 'package:ecommerce_pages/pages/product_details_page.dart';
 import 'package:ecommerce_pages/pages/profile_page.dart';
@@ -33,8 +34,9 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color(0xfff7e6e6),
       ),
-      home: const HelpCenterPage(),
+      // home: const HelpCenterPage(),
       // home: const HomePage(),
+      home: NoInternetPage(),
       routes: {
         ConfirmationPage.routeName: ((context) => const ConfirmationPage()),
         DealsPage.routeName: ((context) => const DealsPage()),

@@ -1,13 +1,50 @@
+import 'dart:async';
+
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:ecommerce_pages/models/homepage_menu_item.dart';
+import 'package:ecommerce_pages/pages/no_internet_page.dart';
 import 'package:ecommerce_pages/pages/our_products_page.dart';
 import 'package:ecommerce_pages/pages/profile_page.dart';
 import 'package:ecommerce_pages/widgets/home_page_menu_item_view.dart';
 import 'package:flutter/material.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
-class HomePage extends StatelessWidget {
-    static const routeName = '/home-page';
+class HomePage extends StatefulWidget {
+  static const routeName = '/home-page';
 
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late StreamSubscription subscription;
+  var isDeviceConnected = false;
+  bool isAlertSet = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getConnectivity();
+  }
+
+  getConnectivity() =>
+      subscription = Connectivity().onConnectivityChanged.listen((event) async {
+        isDeviceConnected = await InternetConnectionChecker().hasConnection;
+        if (!isDeviceConnected && isAlertSet == false) {
+          const NoInternetPage();
+          setState(() {
+            isAlertSet = true;
+          });
+        }
+      });
+
+  @override
+  void dispose() {
+    super.dispose();
+    subscription.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +74,7 @@ class HomePage extends StatelessWidget {
             children: [
               InkWell(
                   onTap: () {
-                                    Navigator.of(context).pushNamed(Profile.routeName);
+                    Navigator.of(context).pushNamed(Profile.routeName);
 
                     // Navigator.of(context).push(MaterialPageRoute(
                     //     builder: (context) => const Profile()));
