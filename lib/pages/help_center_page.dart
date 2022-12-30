@@ -4,6 +4,7 @@ import '../widgets/contact_us_tab.dart';
 import '../widgets/faq_tab.dart';
 
 class HelpCenterPage extends StatelessWidget {
+  static const routeName = '/help-center';
   const HelpCenterPage({super.key});
 
   @override

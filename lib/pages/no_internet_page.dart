@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NoInternetPage extends StatelessWidget {
+  static const routeName = '/no-internet';
   const NoInternetPage({super.key});
 
   @override
