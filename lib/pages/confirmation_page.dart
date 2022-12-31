@@ -1,9 +1,11 @@
+import 'package:ecommerce_pages/helpers/dialog_helper.dart';
 import 'package:ecommerce_pages/pages/home_page.dart';
 import 'package:ecommerce_pages/pages/my_orders_page.dart';
 import 'package:ecommerce_pages/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../widgets/custom_dialog.dart';
 import '../widgets/text_widget.dart';
 
 class ConfirmationPage extends StatelessWidget {
@@ -51,7 +53,10 @@ class ConfirmationPage extends StatelessWidget {
           ),
           CustomButton(
               function: () {
-                Navigator.of(context).pushNamed(HomePage.routeName);
+                DialogHelper.showAlertDialog(context);
+                // CustomDialog();
+                print('hello');
+                // Navigator.of(context).pushNamed(HomePage.routeName);
                 // Navigator.of(context).push(
                 //     MaterialPageRoute(builder: (context) => const HomePage()));
               },
@@ -65,7 +70,7 @@ class ConfirmationPage extends StatelessWidget {
           ),
           CustomButton(
               function: () {
-                                Navigator.of(context).pushNamed(MyOrdersPage.routeName);
+                Navigator.of(context).pushNamed(MyOrdersPage.routeName);
 
                 // Navigator.of(context).push(MaterialPageRoute(
                 //     builder: (context) => const MyOrdersPage()));

@@ -3,6 +3,7 @@ import 'package:ecommerce_pages/pages/confirmation_page.dart';
 import 'package:ecommerce_pages/pages/product_details_page.dart';
 import 'package:ecommerce_pages/widgets/cart_items.dart';
 import 'package:ecommerce_pages/widgets/custom_button.dart';
+import 'package:ecommerce_pages/widgets/custom_dialog.dart';
 import 'package:ecommerce_pages/widgets/total_amount.dart';
 import 'package:flutter/material.dart';
 
@@ -105,7 +106,9 @@ class MyCartPage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: CustomButton(
                       height: 10,
-                      function: () {},
+                      function: () {
+                        
+                      },
                       text: 'Apply',
                       color: const Color(0xff014ea0),
                       width: 70.0,

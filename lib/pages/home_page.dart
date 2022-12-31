@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:ecommerce_pages/models/homepage_menu_item.dart';
 import 'package:ecommerce_pages/pages/deals_page.dart';
 import 'package:ecommerce_pages/pages/help_center_page.dart';
 import 'package:ecommerce_pages/pages/my_cart_page.dart';
@@ -13,6 +12,7 @@ import 'package:ecommerce_pages/widgets/home_page_menu_item_view.dart';
 import 'package:flutter/material.dart';
 
 import '../models/drawer_item.dart';
+import '../models/homepage_menu_item.dart';
 import '../widgets/drawer_heading.dart';
 
 class HomePage extends StatefulWidget {
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
       DrawerItem(
           id: 2,
           title: 'Profile',
-          icon: Icons.person_2_outlined,
+          icon: Icons.person,
           isSelected: currentPage == Profile.routeName ? true : false),
       DrawerItem(
           id: 3,
@@ -70,18 +70,18 @@ class _HomePageState extends State<HomePage> {
           isSelected: currentPage == HelpCenterPage.routeName ? true : false),
     ];
 
-    final List<MenuItem> menuItems = [
-      MenuItem(title: 'UnexMart', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'OrganicMart', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Fashion', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Gadget', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(
+    final List<HomeMenuItem> menuItems = [
+      HomeMenuItem(title: 'UnexMart', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'OrganicMart', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Fashion', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Gadget', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(
           title: 'Food and Beverage', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Personal Care', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Hygiene Care', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Pet Care', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Pet Care', imgURL: 'assets/images/home_cart.svg'),
-      MenuItem(title: 'Pet Care', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Personal Care', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Hygiene Care', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Pet Care', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Pet Care', imgURL: 'assets/images/home_cart.svg'),
+      HomeMenuItem(title: 'Pet Care', imgURL: 'assets/images/home_cart.svg'),
     ];
 
     return Scaffold(
